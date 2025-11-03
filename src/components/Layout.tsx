@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import eshvynLogo from "@/assets/eshvyn-logo.png";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,10 +46,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg glow-primary group-hover:scale-110 transition-transform" />
-              <span className="text-xl font-bold glow-text-primary hidden sm:block">
-                ESHVYN GAMES
-              </span>
+              <img 
+                src={eshvynLogo} 
+                alt="Eshvyn Games" 
+                className="h-8 w-auto opacity-75 group-hover:opacity-100 transition-opacity"
+                style={{ 
+                  filter: 'drop-shadow(0 0 8px rgba(102, 126, 234, 0.6)) drop-shadow(0 0 16px rgba(132, 204, 22, 0.4))' 
+                }}
+              />
             </Link>
 
             {/* Desktop Navigation */}
