@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import eshvynLogo from "@/assets/eshvyn-logo.png";
 
 const Home = () => {
   return (
@@ -39,14 +40,17 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* Logo/Badge */}
+            {/* Official Logo */}
             <motion.div
-              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm"
+              className="mb-8"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Sparkles className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-primary">Next-Gen Gaming Studio</span>
+              <img 
+                src={eshvynLogo} 
+                alt="Eshvyn Games Interactive Logo" 
+                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto glow-primary"
+              />
             </motion.div>
 
             {/* Main Heading */}
@@ -85,20 +89,19 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              <Link to="/games">
-                <Button
-                  size="lg"
-                  className="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl glow-primary transition-all hover:scale-105"
-                >
-                  Explore Worlds
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
               <Link to="/about">
                 <Button
                   size="lg"
                   variant="outline"
                   className="group border-2 border-primary/50 text-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-xl transition-all hover:scale-105"
+                >
+                  About Us
+                </Button>
+              </Link>
+              <Link to="/mission">
+                <Button
+                  size="lg"
+                  className="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl glow-primary transition-all hover:scale-105"
                 >
                   Our Mission
                 </Button>
@@ -111,31 +114,6 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Quick Stats Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { label: "Innovation", value: "100%", icon: "⚡" },
-              { label: "Purity", value: "∞", icon: "✨" },
-              { label: "Future-Ready", value: "2025+", icon: "🚀" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="holo-border rounded-2xl p-8 text-center hover:scale-105 transition-transform"
-              >
-                <div className="text-5xl mb-4">{stat.icon}</div>
-                <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

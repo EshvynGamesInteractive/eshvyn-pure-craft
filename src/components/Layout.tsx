@@ -21,9 +21,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/games", label: "Games" },
+    { to: "/about", label: "About Us" },
+    { to: "/mission", label: "Our Mission" },
     { to: "/technology", label: "Technology" },
+    { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -124,13 +125,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 Home
               </Link>
               <Link to="/about" className="hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link to="/games" className="hover:text-primary transition-colors">
-                Games
+                About Us
               </Link>
               <Link to="/contact" className="hover:text-primary transition-colors">
-                Contact
+                Contact Us
               </Link>
               <Link to="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy

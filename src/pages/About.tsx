@@ -37,14 +37,8 @@ const About = () => {
             className="text-center space-y-6"
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black">
-              <span className="gradient-text glow-text-primary">The Future,</span>
-              <br />
-              <span className="text-muted-foreground">Crafted Pure</span>
+              <span className="gradient-text glow-text-primary">About Us</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              At Eshvyn Games Interactive, we create immersive digital experiences born from creativity
-              and purity of design.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -59,17 +53,9 @@ const About = () => {
             viewport={{ once: true }}
             className="holo-border rounded-3xl p-8 sm:p-12 space-y-6"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Our Mission</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">About Us</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our mission is to redefine gaming through innovation, artistry, and technology. We believe
-              in creating experiences that transcend traditional boundaries, merging stunning visuals with
-              meaningful gameplay. Every project we undertake is a testament to our commitment to purity—
-              in design, in execution, and in the joy we bring to players worldwide.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We're not just building games; we're crafting worlds where imagination meets reality, where
-              every player becomes part of something greater. Our team of visionaries, artists, and
-              engineers work in harmony to push the limits of what's possible in interactive entertainment.
+              At Eshvyn Games we combine Pure Innovation with uncompromising quality to craft the most memorable mobile journeys possible. We pour our heart and Pure Craft into creating Infinite Worlds—challenging ourselves to deliver unique features and stunning art. We are dedicated to providing the best entertainment possible by making sure every game we release is a masterpiece.
             </p>
           </motion.div>
         </div>
@@ -124,9 +110,7 @@ const About = () => {
 
           <div className="space-y-8">
             {[
-              { year: "2024", title: "Foundation", desc: "Eshvyn Games Interactive is born with a vision" },
-              { year: "2025", title: "Innovation", desc: "Launching our first flagship title" },
-              { year: "2026+", title: "Expansion", desc: "Building the future of interactive entertainment" },
+              { year: "2024", title: "Foundation", desc: "Eshvyn Games Interactive is an emerging gaming studio." },
             ].map((milestone, index) => (
               <motion.div
                 key={milestone.year}
