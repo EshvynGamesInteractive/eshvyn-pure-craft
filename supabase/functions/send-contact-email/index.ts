@@ -1,7 +1,8 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@4.0.0";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
+
+
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -26,23 +27,31 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email from:", email, "Name:", name);
 
-    // Send email to Eshvyn Games
-    const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: ["EshvynGames@gmail.com"],
-      subject: `New Contact Form Message from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>From:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
+    // Send email to Eshvyn Games using Resend API
+    const emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Contact Form <onboarding@resend.dev>",
+        to: ["EshvynGames@gmail.com"],
+        subject: `New Contact Form Message from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>From:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      }),
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    const emailData = await emailResponse.json();
+    console.log("Email sent successfully:", emailData);
 
-    return new Response(JSON.stringify(emailResponse), {
+    return new Response(JSON.stringify(emailData), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
