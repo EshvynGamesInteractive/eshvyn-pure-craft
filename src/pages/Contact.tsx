@@ -9,6 +9,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import eshvynLogo from "@/assets/eshvyn-logo-transparent.png";
+import { Mail } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -76,6 +78,34 @@ const Contact = () => {
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
               Have a question? Want to collaborate? We'd love to hear from you.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Email Section */}
+      <section className="pb-12">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="holo-border rounded-3xl p-8 sm:p-12 text-center space-y-6"
+          >
+            <img 
+              src={eshvynLogo} 
+              alt="Eshvyn Games Logo" 
+              className="w-32 h-32 mx-auto object-contain"
+            />
+            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">
+              Contact us on Email
+            </h2>
+            <a 
+              href="mailto:eshvyngames@gmail.com"
+              className="inline-flex items-center gap-2 text-xl sm:text-2xl text-primary hover:text-primary/80 transition-colors group"
+            >
+              <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              eshvyngames@gmail.com
+            </a>
           </motion.div>
         </div>
       </section>
