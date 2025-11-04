@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
-import eshvynLogo from "@/assets/eshvyn-logo.png";
 
 const Home = () => {
   return (
@@ -40,19 +39,6 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* Official Logo */}
-            <motion.div
-              className="mb-8"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <img 
-                src={eshvynLogo} 
-                alt="Eshvyn Games Interactive Logo" 
-                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto glow-primary"
-              />
-            </motion.div>
-
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black leading-tight">
               <span className="block gradient-text glow-text-primary">ESHVYN GAMES</span>

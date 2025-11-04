@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { supabase } from "@/integrations/supabase/client";
-import eshvynLogo from "@/assets/eshvyn-logo-transparent.png";
 import { Mail } from "lucide-react";
 
 const contactSchema = z.object({
@@ -91,11 +90,6 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="holo-border rounded-3xl p-8 sm:p-12 text-center space-y-6"
           >
-            <img 
-              src={eshvynLogo} 
-              alt="Eshvyn Games Logo" 
-              className="w-32 h-32 mx-auto object-contain"
-            />
             <h2 className="text-3xl sm:text-4xl font-bold gradient-text">
               Contact us on Email
             </h2>
