@@ -27,6 +27,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { to: "/technology", label: "Technology" },
     { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
+    { to: "/Privacy", label: "Privacy Policy" },
   ];
 
   return (

@@ -92,6 +92,7 @@ const Home = () => {
                   Our Mission
                 </Button>
               </Link>
+
             </motion.div>
           </motion.div>
         </div>

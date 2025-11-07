@@ -10,6 +10,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import * as z from "zod";
 import {supabase} from "@/integrations/supabase/client";
 import {Mail} from "lucide-react";
+import {Link} from "react-router-dom";
 
 const contactSchema = z.object({
     name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -77,6 +78,8 @@ const Contact = () => {
                         <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
                             Have a question? Want to collaborate? We'd love to hear from you.
                         </p>
+                        <br/>
+
                     </motion.div>
                 </div>
             </section>
@@ -100,6 +103,32 @@ const Contact = () => {
                             <Mail className="w-6 h-6 group-hover:scale-110 transition-transform"/>
                             eshvyngames@gmail.com
                         </a>
+                    </motion.div>
+                </div>
+            </section>
+            <section className="pb-12">
+                <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{opacity: 0, y: 30}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8, delay: 0.2}}
+                        className="holo-border rounded-3xl p-8 sm:p-12 text-center space-y-6"
+                    >
+                        <h2 className="text-3xl sm:text-4xl font-bold gradient-text">
+                            Data Center Request
+                        </h2>
+                         <br/>
+                        <Link to="https://docs.google.com/forms/d/16HZLYMvH0guaEiVvHFtMt8TeK6-0ouS9hf-Cps5sRwo/edit">
+
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="group border-2 border-primary/50 text-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-xl transition-all hover:scale-105"
+                            >
+                                Data Delete Form
+                            </Button>
+
+                        </Link>
                     </motion.div>
                 </div>
             </section>
